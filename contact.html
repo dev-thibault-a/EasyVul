@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EasyVul – Contact</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">🛡️ EasyVul</a>
+      <nav>
+        <a href="index.html#scan">Scan</a>
+        <a href="vulnerabilities.html">Vulnérabilités</a>
+        <a href="tools.html">Outils</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="contact.html" class="nav-btn active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact">
+    <div class="container">
+      <h1>Contactez EasyVul</h1>
+      <p>Une question, suggestion ou demande ? Utilisez le formulaire ci-dessous.</p>
+      <form action="mailto:contact.easynetworks@gmail.com" method="POST" enctype="text/plain" onsubmit="return confirm('Êtes-vous sûr de vouloir envoyer ce message ?');">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="Nom" required />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="Email" required />
+
+        <label for="subject">Objet :</label>
+        <input type="text" id="subject" name="Sujet" value="EasyVul – Demande de contact" required />
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="Message" rows="6" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 EasyVul – Créé par Thibault A. | Open Source.</div>
+  </footer>
+</body>
+</html>
