@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EasyVul – Outils sécurités</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">🛡️ EasyVul</a>
+      <nav>
+        <a href="index.html#scan">Scan</a>
+        <a href="vulnerabilities.html">Vulnérabilités</a>
+        <a href="tools.html" class="active">Outils</a>
+        <a href="documentation.html">Documentation</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="tools">
+    <div class="container">
+      <h1>Outils d'analyse et méthodes</h1>
+      <div class="tabs">
+        <button class="tab active" data-tab="static">Analyse statique (SAST)</button>
+        <button class="tab" data-tab="secrets">Scan secrets</button>
+        <button class="tab" data-tab="deps">Vulnérabilités dépendances</button>
+      </div>
+      <div class="tab-content" id="static">
+        <ul class="tools-list">
+          <li><b>CodeQL</b> – Analyse sémantique avancée (JS, Python, Java, C#, Go)</li>
+          <li><b>Semgrep</b> – Recherche par motifs personnalisables (JS, Python, PHP, Ruby)</li>
+          <li><b>Bandit</b> – Analyse AST pour Python</li>
+          <li><b>ESLint + Plugins</b> – Linter JS avec règles de sécurité</li>
+          <li><b>SonarQube</b> – Plateforme complète d’inspection qualité et sécurité</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="secrets" style="display:none;">
+        <ul class="tools-list">
+          <li><b>GitLeaks</b> – Détection de secrets dans l’historique Git</li>
+          <li><b>TruffleHog</b> – recherche de patterns secrets à haute entropie</li>
+          <li><b>detect-secrets</b> – Système plugin extensible développé par Yelp</li>
+          <li><b>GitHub Secret Scanning</b> – Analyse intégrée aux repos GitHub</li>
+        </ul>
+      </div>
+      <div class="tab-content" id="deps" style="display:none;">
+        <ul class="tools-list">
+          <li><b>npm audit</b> – Analyse vulnérabilités des packages Node.js</li>
+          <li><b>pip-audit</b> – Scanner vulnérabilités PyPI Python</li>
+          <li><b>composer audit</b> – Vérification des dépendances PHP Composer</li>
+          <li><b>Snyk</b> – Plateforme multi-langages avec fixes automatiques</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 EasyVul – Créé par Thibault A. | Open Source.</div>
+  </footer>
+</body>
+</html>
