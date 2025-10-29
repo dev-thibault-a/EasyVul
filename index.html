@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EasyVul – Scanner de Vulnérabilités Web</title>
+  <meta name="description" content="Analyse statique de code pour détecter les vulnérabilités courantes (XSS, SQLi, secrets, dépendances) en JavaScript, Python, PHP.">
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header" class="header">
+    <div class="container nav">
+      <a href="#" class="logo">🛡️ EasyVul</a>
+      <nav>
+        <a href="#features">Fonctionnalités</a>
+        <a href="#types">Vulnérabilités</a>
+        <a href="#tools">Outils</a>
+        <a href="#scan">Scan</a>
+        <a href="#contact" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Détecteur de vulnérabilités EasyVul</h1>
+      <p>Analysez votre code JavaScript, Python ou PHP pour identifier injections SQL, XSS, secrets codés en dur et dépendances vulnérables.</p>
+      <div class="hero-actions">
+        <a href="#scan" class="btn btn-primary">🚀 Lancer un scan</a>
+        <a href="#about" class="btn btn-outline">📖 Documentation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONCTIONNALITÉS -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Fonctionnalités principales</h2>
+      <div class="grid-3">
+        <div class="card"><span>🔗</span><h3>Intégration GitHub</h3><p>Scannez vos repositories privés ou publics.</p></div>
+        <div class="card"><span>📊</span><h3>Rapports détaillés</h3><p>Rapport complet avec code, localisation, fix et scoring.</p></div>
+        <div class="card"><span>🎯</span><h3>Scoring sécurité</h3><p>Note globale compréhensible de votre code.</p></div>
+        <div class="card"><span>📄</span><h3>Export SARIF</h3><p>Résultats normalisés interopérables avec GitHub, VS Code…</p></div>
+        <div class="card"><span>⚙️</span><h3>Intégration CI/CD</h3><p>Intégrable sur GitHub Actions, GitLab CI, Jenkins.</p></div>
+        <div class="card"><span>🌐</span><h3>Multi-langages</h3><p>Analyse JavaScript, Python, PHP dans le même flux.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES DE VULNÉRABILITÉS -->
+  <section id="types" class="vuln-types">
+    <div class="container">
+      <h2>Types de vulnérabilités détectées</h2>
+      <div class="accordion">
+        <!-- Exemple de bloc accordéon (dupliqué/modifié en JS pour tous les types en dynamique si besoin) -->
+        <div class="accordion-item open">
+          <button class="accordion-title">💉 Injection SQL <span class="badge critical">Critique</span></button>
+          <div class="accordion-content">
+            <p><b>Description :</b> Permet d'exécuter des requêtes SQL malicieuses via entrée utilisateur.</p>
+            <p><b>Impact :</b> Accès, modification, suppression de données.</p>
+            <pre>query = "SELECT * FROM users WHERE id = " + user_input</pre>
+            <p><b>Remédiation :</b> Utilisez des requêtes préparées/paramétrées.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-title">🔓 XSS <span class="badge high">Élevée</span></button>
+          <div class="accordion-content">
+            <p><b>Description :</b> Injection de script malveillant dans une page web.</p>
+            <pre>echo $_GET['content'];</pre>
+            <p><b>Remédiation :</b> Echappez toute sortie utilisateur, CSP obligatoire !</p>
+          </div>
+        </div>
+        <!-- Répéter pour chaque type... -->
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTILS D'ANALYSE -->
+  <section id="tools" class="tools">
+    <div class="container">
+      <h2>Outils embarqués</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="static">Analyse statique</button>
+        <button class="tab" data-tab="secrets">Secrets</button>
+        <button class="tab" data-tab="deps">Dépendances</button>
+      </div>
+      <div class="tab-content" id="static">
+        <ul class="tools-list">
+          <li>
+            <b>CodeQL</b> – Analyse avancée <span class="lang">JavaScript, Python, Java…</span>
+          </li>
+          <li>
+            <b>Semgrep</b> – Recherche par pattern <span class="lang">JS, Python, PHP…</span>
+          </li>
+          <li>
+            <b>Bandit</b> – Détection sécurité Python
+          </li>
+          <li>
+            <b>ESLint + plugins</b>
+          </li>
+          <li>
+            <b>SonarQube</b>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content" id="secrets" style="display:none">
+        <ul class="tools-list">
+          <li><b>GitLeaks</b> – Secrets dans Git</li>
+          <li><b>TruffleHog</b> – Recherche haute entropie</li>
+          <li><b>detect-secrets</b> – Plugin extensible</li>
+          <li><b>GitHub Secret Scanning</b></li>
+        </ul>
+      </div>
+      <div class="tab-content" id="deps" style="display:none">
+        <ul class="tools-list">
+          <li><b>npm audit</b> – JS Node</li>
+          <li><b>pip-audit</b> – Python</li>
+          <li><b>composer audit</b> – PHP</li>
+          <li><b>Snyk</b> – Multi-langages</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCAN INTERACTIF -->
+  <section id="scan" class="scan">
+    <div class="container">
+      <h2>Analyse de code</h2>
+      <form id="scan-form">
+        <textarea id="code-input" placeholder="Collez ici votre code ou URL GitHub…"></textarea>
+        <select id="lang-select">
+          <option value="js">JavaScript</option>
+          <option value="py">Python</option>
+          <option value="php">PHP</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Analyser</button>
+      </form>
+      <div id="scan-result" style="display:none;">
+        <!-- Zone du score de sécurité et des failles trouvées -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container footer-cols">
+      <div>
+        <h4>À propos</h4>
+        <p>EasyVul – Open Source, par Thibault A.<br>Analyse moderne des vulnérabilités web multi-langages.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#features">Fonctionnalités</a></li>
+          <li><a href="#types">Vulnérabilités</a></li>
+          <li><a href="#tools">Outils</a></li>
+          <li><a href="#scan">Scan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="#about">Documentation</a></li>
+          <li><a href="https://owasp.org/www-project-top-ten/" target="_blank">OWASP Top 10</a></li>
+          <li><a href="https://sarifweb.azurewebsites.net/" target="_blank">SARIF</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact.easynetworks@gmail.com">contact.easynetworks@gmail.com</a></li>
+          <li><a href="https://github.com/votre-github" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/votre-linkedin" target="_blank">LinkedIn</a></li>
+          <li><a href="https://easynetworks.vercel.app" target="_blank">Easynetworks</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2025 EasyVul – Créé par Thibault A. | Open Source.
+    </div>
+  </footer>
+</body>
+</html>
