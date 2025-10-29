@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EasyVul – Documentation</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">🛡️ EasyVul</a>
+      <nav>
+        <a href="index.html#scan">Scan</a>
+        <a href="vulnerabilities.html">Vulnérabilités</a>
+        <a href="tools.html">Outils</a>
+        <a href="documentation.html" class="active">Documentation</a>
+        <a href="contact.html" class="nav-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="doc">
+    <div class="container">
+      <h1>Documentation EasyVul</h1>
+      <h2>Prise en main rapide</h2>
+      <ol>
+        <li>Sélectionnez un langage supporté ou “Autre”.</li>
+        <li>Collez le code source ou saisissez l'URL d'un repository/fichier public.</li>
+        <li>Lancez l’analyse, consultez le rapport et exportez-le (SARIF, PDF, CSV…)</li>
+        <li>Corrigez les vulnérabilités selon les recommandations.</li>
+      </ol>
+
+      <h2>Langages supportés</h2>
+      <ul>
+        <li><strong>JavaScript / Node.js</strong></li>
+        <li><strong>Python</strong></li>
+        <li><strong>PHP</strong></li>
+        <li><strong>HTML / CSS</strong> (XSS, injections dans styles, inclusions dangereuses)</li>
+        <li><strong>Ruby</strong>, <strong>Java</strong> (partiel)</li>
+      </ul>
+
+      <h2>Types de vulnérabilités détectées</h2>
+      <ul>
+        <li>Injection SQL, NoSQL et commande OS</li>
+        <li>XSS, CSRF, IDOR, SSRF</li>
+        <li>Path traversal, fuite de fichiers</li>
+        <li>Secrets codés en dur ou exposés</li>
+        <li>Dépendances obsolètes (npm, pip, composer…)</li>
+        <li>Mauvaise configuration CORS, Crypto faible</li>
+      </ul>
+
+      <h2>Outils et méthodes d’analyse</h2>
+      <ul>
+        <li><strong>Analyse statique (SAST)</strong> : CodeQL, Semgrep, Bandit, ESLint, PHPStan, SonarQube…</li>
+        <li><strong>Scan secrets</strong> : GitLeaks, TruffleHog, detect-secrets, GitHub Secret Scanning</li>
+        <li><strong>Scan dépendances</strong> : npm audit, pip-audit, composer audit, Snyk</li>
+        <li><strong>Export SARIF</strong> standard pour intégration CI/CD</li>
+      </ul>
+
+      <h2>FAQ</h2>
+      <p><strong>Q : Mon code est-il confidentiel ?</strong><br />Oui, l’analyse s’effectue localement ou via chiffrement, rien n’est stocké sans accord.</p>
+      <p><strong>Q : EasyVul détecte-t-il tous les 0days ?</strong><br />Non, il cible les failles connues OWASP majoritaires. Une analyse manuelle complète reste primordiale.</p>
+      <p><strong>Q : Puis-je intégrer EasyVul dans mon pipeline CI/CD ?</strong><br />Oui, grâce aux hooks GitHub Actions/GitLab/Jenkins ou via API REST/CLI.</p>
+
+      <h2>Plus d'informations</h2>
+      <ul>
+        <li>Contact sécurité : <a href="mailto:contact.easynetworks@gmail.com?subject=EasyVul%20%E2%80%93%20Demande%20de%20contact">contact.easynetworks@gmail.com</a></li>
+        <li>Projet Open Source disponible sur <a href="https://github.com/votre-github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>OWASP Top 10 : <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener noreferrer">https://owasp.org/www-project-top-ten/</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 EasyVul – Créé par Thibault A. | Open Source.</div>
+  </footer>
+</body>
+</html>
